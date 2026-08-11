@@ -14,7 +14,7 @@
 ## 2. Kết quả kỹ thuật
 
 - Điểm `validate_logs.py`: 100/100
-- Tổng số traces: ~10+ (Đã cấu hình thành công Langfuse)
+- Tổng số traces: 104 (Đã cấu hình thành công Langfuse)
 - Số PII leak còn lại: 0
 - Link/đường dẫn dashboard: [Điền link dashboard public của nhóm vào đây]
 
@@ -56,7 +56,7 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| Nguyễn Tuấn Dương | Phụ trách CP1 (Middleware, Correlation ID, log metadata) | N/A | Nắm được luồng request và cách gán correlation ID xuyên suốt hệ thống. |
-| Tạ Quốc Tuấn | Phụ trách CP1 (Uncomment processor, Regex patterns che PII) | N/A | Biết cách sử dụng processor và regex để bảo vệ dữ liệu nhạy cảm trong log. |
-| Nguyễn Tuấn Phong | Phụ trách CP2 (Tích hợp Langfuse, SLO, Alert rules, Runbook) | N/A | Hiểu cách định nghĩa SLO, thiết lập Alert rule và kết nối với Langfuse. |
-| Nguyễn Hữu Công | CP3 (Load test, Dashboard Spec, Điều tra Challenge, Viết báo cáo) | N/A | Củng cố tư duy điều tra sự cố: kết hợp metrics, traces và logs để tìm Root Cause. |
+| Nguyễn Tuấn Dương (A) | CP1: Middleware, Correlation ID, log metadata | [`e2230e9`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/e2230e9), [`1b0d7b9`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/1b0d7b9) | Nắm được luồng request và cách gán correlation ID xuyên suốt hệ thống. |
+| Tạ Quốc Tuấn (B) | CP1: PII patterns (email, phone, cccd, credit_card), scrub_event | [`f28866d`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/f28866d), [`6111116`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/6111116), [`8c3a74f`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/8c3a74f) | Biết cách sử dụng processor và regex để bảo vệ dữ liệu nhạy cảm trong log. |
+| Nguyễn Tuấn Phong (C) | CP2: Langfuse traces, @observe spans, SLO, Alert rules, Runbook, prompt v1/v2 | [`2f1bc35`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/2f1bc35) | Hiểu cách tích hợp Langfuse SDK, định nghĩa SLO, thiết lập Alert rule. |
+| Nguyễn Hữu Công (D) | CP1+CP2: Load test, validate scripts, REPORT.md, evidence | [`333dd48`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/333dd48), [`ad219c0`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/ad219c0), [`f3b3736`](https://github.com/NTPQK226/K4-DAY13-2A202601038/commit/f3b3736) | Củng cố tư duy điều tra sự cố: kết hợp metrics, traces và logs để tìm Root Cause. |
