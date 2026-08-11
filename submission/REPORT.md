@@ -2,10 +2,14 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
-- Repository URL:
-- Commit SHA cuối:
+- Tên nhóm: Nhóm Thực Hành K4
+- Repository URL: https://github.com/NTPQK226/K4-DAY13-2A202601038
+- Commit SHA cuối: [Điền Commit SHA mới nhất sau khi bạn commit file này]
 - Thành viên và vai trò:
+  - Nguyễn Tuấn Dương (2A202601966) - Thành viên A: Phụ trách Logging & Middleware
+  - Tạ Quốc Tuấn (2A202601114) - Thành viên B: Phụ trách Security & Compliance
+  - Nguyễn Tuấn Phong (2A202601038) - Thành viên C: Phụ trách Metrics & Alerting
+  - Nguyễn Hữu Công (2A202601732) - Thành viên D: Phụ trách QA & Incident Analyst
 
 ## 2. Kết quả kỹ thuật
 
@@ -52,4 +56,7 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| | | | |
+| Nguyễn Tuấn Dương | Phụ trách CP1 (Middleware, Correlation ID, log metadata) | N/A | Nắm được luồng request và cách gán correlation ID xuyên suốt hệ thống. |
+| Tạ Quốc Tuấn | Phụ trách CP1 (Uncomment processor, Regex patterns che PII) | N/A | Biết cách sử dụng processor và regex để bảo vệ dữ liệu nhạy cảm trong log. |
+| Nguyễn Tuấn Phong | Phụ trách CP2 (Tích hợp Langfuse, SLO, Alert rules, Runbook) | N/A | Hiểu cách định nghĩa SLO, thiết lập Alert rule và kết nối với Langfuse. |
+| Nguyễn Hữu Công | CP3 (Load test, Dashboard Spec, Điều tra Challenge, Viết báo cáo) | N/A | Củng cố tư duy điều tra sự cố: kết hợp metrics, traces và logs để tìm Root Cause. |
