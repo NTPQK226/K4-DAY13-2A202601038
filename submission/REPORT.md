@@ -2,9 +2,9 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm: Nhóm Thực Hành K4
+- Tên nhóm: B1-2
 - Repository URL: https://github.com/NTPQK226/K4-DAY13-2A202601038
-- Commit SHA cuối: [Điền Commit SHA mới nhất sau khi bạn commit file này]
+- Commit SHA cuối: ad219c0
 - Thành viên và vai trò:
   - Nguyễn Tuấn Dương (2A202601966) - Thành viên A: Phụ trách Logging & Middleware
   - Tạ Quốc Tuấn (2A202601114) - Thành viên B: Phụ trách Security & Compliance
