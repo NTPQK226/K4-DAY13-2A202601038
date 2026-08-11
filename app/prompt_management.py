@@ -46,8 +46,8 @@ def resolve_prompt(
                 type="text",
                 fallback=DEFAULT_PROMPT_TEMPLATE,
                 cache_ttl_seconds=60,
-                fetch_timeout_seconds=2,
-                max_retries=0,
+                fetch_timeout_seconds=10,
+                max_retries=1,
             )
             if getattr(managed_prompt, "is_fallback", False):
                 return ResolvedPrompt(

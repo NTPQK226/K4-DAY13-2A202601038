@@ -87,8 +87,8 @@ def test_langfuse_prompt_version_and_label_are_resolved(monkeypatch) -> None:
             "type": "text",
             "fallback": DEFAULT_PROMPT_TEMPLATE,
             "cache_ttl_seconds": 60,
-            "fetch_timeout_seconds": 2,
-            "max_retries": 0,
+            "fetch_timeout_seconds": 10,
+            "max_retries": 1,
         },
     )
     assert resolved.source == "langfuse"
