@@ -1,0 +1,41 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "develop", "main" ]
+  pull_request:
+    branches: [ "develop", "main" ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run unit tests
+      run: python -m pytest -q
+      
+    - name: Start API server in background
+      run: |
+        uvicorn app.main:app &
+        sleep 3 # Wait for server to start
+        
+    - name: Generate mock data via Load Test
+      run: python scripts/load_test.py --concurrency 2
+      
+    - name: Validate Logs compliance
+      run: python scripts/validate_logs.py
+      
+    - name: Validate Dashboard specification
+      run: python scripts/validate_dashboard.py
