@@ -26,7 +26,7 @@ class LabAgent:
         self.model = model
         self.llm = FakeLLM(model=model)
 
-    @observe(as_type="generation", capture_input=False, capture_output=False)
+    @observe(capture_input=False, capture_output=False)
     def run(self, user_id: str, feature: str, session_id: str, message: str) -> AgentResult:
         # Thêm import ở đầu file hoặc bên trong hàm:
         from structlog.contextvars import get_contextvars
@@ -37,6 +37,7 @@ class LabAgent:
             session_id=session_id,
             tags=["lab", feature, self.model],
             metadata={"correlation_id": get_contextvars().get("correlation_id", "MISSING")},
+            input={"message": message},
         )
 
 
@@ -65,6 +66,7 @@ class LabAgent:
                 "prompt_version": prompt.version,
                 "prompt_source": prompt.source,
             },
+            output={"answer": response.text},
         )
         langfuse_client.update_current_generation(
             model=self.model,

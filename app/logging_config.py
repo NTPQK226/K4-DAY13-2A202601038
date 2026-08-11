@@ -22,6 +22,15 @@ class JsonlFileProcessor:
         return event_dict
 
 
+class AuditJsonlFileProcessor:
+    def __call__(self, logger: Any, method_name: str, event_dict: dict[str, Any]) -> dict[str, Any]:
+        # Ghi log riêng biệt nếu event đánh dấu là audit
+        if event_dict.get("audit"):
+            audit_path = LOG_PATH.parent / "audit.jsonl"
+            rendered = structlog.processors.JSONRenderer()(logger, method_name, event_dict)
+            with audit_path.open("a", encoding="utf-8") as f:
+                f.write(rendered + "\n")
+        return event_dict
 
 def scrub_event(_: Any, __: str, event_dict: dict[str, Any]) -> dict[str, Any]:
     for key, val in event_dict.items():
@@ -47,6 +56,7 @@ def configure_logging() -> None:
             scrub_event,
             structlog.processors.StackInfoRenderer(),
             structlog.processors.format_exc_info,
+            AuditJsonlFileProcessor(),
             JsonlFileProcessor(),
             structlog.processors.JSONRenderer(),
         ],
