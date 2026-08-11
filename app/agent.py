@@ -28,6 +28,18 @@ class LabAgent:
 
     @observe(as_type="generation", capture_input=False, capture_output=False)
     def run(self, user_id: str, feature: str, session_id: str, message: str) -> AgentResult:
+        # Thêm import ở đầu file hoặc bên trong hàm:
+        from structlog.contextvars import get_contextvars
+
+        langfuse_client = get_langfuse_client()
+        langfuse_client.update_current_trace(
+            user_id=hash_user_id(user_id),
+            session_id=session_id,
+            tags=["lab", feature, self.model],
+            metadata={"correlation_id": get_contextvars().get("correlation_id", "MISSING")},
+        )
+
+
         started = time.perf_counter()
         docs = retrieve(message)
         langfuse_client = get_langfuse_client()
